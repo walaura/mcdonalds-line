@@ -47,7 +47,7 @@ const popOrderLoop = () => {
 };
 
 const pushOrderLoop = () => {
-	$preparing.appendChild(makeOrder());
+	$preparing.prepend(makeOrder());
 	let nextOne = (500 + Math.random() * 1000) * speed;
 	setTimeout(pushOrderLoop, nextOne);
 };
