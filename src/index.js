@@ -23,7 +23,7 @@ const popOrder = () => {
 		return;
 	}
 	let $childe = childree[Math.floor(Math.random() * childree.length) % 5];
-	$collect.appendChild($childe);
+	$collect.prepend($childe);
 };
 
 const reapOrder = () => {
