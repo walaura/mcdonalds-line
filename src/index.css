@@ -3,6 +3,32 @@
 	padding: 0;
 }
 
+.noise {
+	position: fixed;
+	background: url(https://media.giphy.com/media/45aI8f1nI1b071X96C/giphy.gif);
+	background-size: cover;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	will-change: transform;
+	mix-blend-mode: hard-light;
+	opacity: 0.005;
+}
+.color {
+	position: fixed;
+	background: #fc284f;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 19;
+	will-change: transform;
+	mix-blend-mode: multiply;
+	opacity: 0.25;
+}
+
 body {
 	overflow: hidden;
 	background: #000;
@@ -72,6 +98,18 @@ x-order {
 	animation: order 0.5s;
 	display: block;
 	padding: 0.1em;
+}
+
+.spoony {
+	position: relative;
+}
+
+.spoony img {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
 }
 
 .bg {
