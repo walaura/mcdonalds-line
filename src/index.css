@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+	background: #000;
+}
+
+#players {
+	position: absolute;
+	transform-origin: top left;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	transform: scale(0.1);
+	opacity: 0.05;
+}
+
+#orders {
+	width: 1280px;
+	height: 720px;
+	border: 10px solid black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 800;
+	display: grid;
+	grid-template-columns: 30% 30% 1fr;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 1em;
+}
+
+x-t {
+	font-size: 2em;
+	padding: 0.2em 0.5em;
+	display: block;
+	background: var(--main);
+	color: #fff;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.preparing {
+	--main: #7b7b7b;
+}
+
+.collect {
+	--main: #004412;
+	overflow: hidden;
+}
+
+.collect x-order {
+	font-size: 1.5em;
+}
+
+@keyframes order {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
+x-n {
+	color: var(--main);
+	font-size: 6em;
+	line-height: 0.8;
+}
+x-order {
+	animation: order 0.5s;
+	display: block;
+	padding: 0.1em;
+}
+
+.bg {
+	width: 2000px;
+	height: 1600px;
+	background: url(bg.jpg) top right;
+	background-size: cover;
+	perspective: 10000px;
+	position: relative;
+	transform-origin: top left;
+	filter: blur(2px) grayscale(50%) drop-shadow(0 0 10em white);
+}
+
+.bg #orders {
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: scale(0.21) rotateX(0deg) rotateY(-48deg) rotateZ(-3deg)
+		translateX(1988px) translateY(581px);
+}
