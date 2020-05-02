@@ -7,18 +7,22 @@ let [$preparing, $collect] = ['.preparing x-n', '.collect x-n'].map((_) =>
 
 const hexCode = () => {
 	return (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 5);
-  }
+};
 
 const trueSometimes = () => {
-	return Math.random() < 0.2
-}  
+	return Math.random() < 0.2;
+};
 
 const makeOrder = () => {
-	let isHexOrder = trueSometimes()
-	last = isHexOrder ? hexCode() : (isNaN(last) ? Math.floor(Math.random() * 100) : last + 1);
+	let isHexOrder = trueSometimes();
 	let $el = document.createElement('x-order');
-	let order = isNaN(last) ? last : last % 1000;
-	$el.innerText = isNaN(order) ? order : String(order).padStart(3, '0');
+	if (isHexOrder) {
+		$el.innerText = hexCode();
+		return $el;
+	}
+	last = isNaN(last) ? Math.floor(Math.random() * 100) : last + 1;
+	let order = last % 1000;
+	$el.innerText = String(order).padStart(3, '0');
 	return $el;
 };
 
